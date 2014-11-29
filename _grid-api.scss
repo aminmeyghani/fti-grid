@@ -27,6 +27,7 @@
   @extend %_fti-wrap-setup;
 }
 
+// tricky (used to get the % values group with selectors)
 %_fti-col {
   @extend %fti-border-box;
   position: relative;
@@ -35,13 +36,12 @@
   padding-left:  ($fti-gutter / 2);
   padding-right: ($fti-gutter / 2);
 }
-@mixin fti-col ($col) {
-	@extend %_fti-col;
+@mixin _fti-col ($col) {
   width: percentage(($col / $fti-col-n));
 }
 @include calc-grid-column(width, $col-prefix);
-@mixin fti-col($v) {
-  $n : "#{$col-prefix}-#{$v}";
+@mixin fti-col($col) {
+  $n : "#{$col-prefix}-#{$col}";
   $name : #{$n};
   @extend #{$name};
 }

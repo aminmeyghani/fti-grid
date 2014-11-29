@@ -2,7 +2,7 @@
 	@if ($type == width) {
 		@for $index from 1 through $fti-col-n {
 			#{$col-prefix}-#{$index} {
-				@include fti-col($index);
+				@include _fti-col($index);
 			}
 		}
 	}

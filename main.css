@@ -23,39 +23,39 @@ li {
 /* ## `fti-clearfix`
 * Source: http://nicolasgallagher.com/micro-clearfix-hack/
 */
-.row:before, .fti-wrap:before, .row:after, .fti-wrap:after {
+.fti-wrap:before, .row:before, .doublet:before, .triplet:before, .fti-wrap:after, .row:after, .doublet:after, .triplet:after {
   content: " ";
   display: table; }
-.row:after, .fti-wrap:after {
+.fti-wrap:after, .row:after, .doublet:after, .triplet:after {
   clear: both; }
 
-.container, .fti-contain, .fti__contain, .fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .fti-col-5, .fti-col-6, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+.fti-contain, .fti__contain, .container, .fti-page, .fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet-inner, .fti-col-5, .fti-col-6, .doublet-inner, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   *behavior: url("boxsizing.htc"); }
 
 @media (min-width: 768px) {
-  .container, .fti-contain {
+  .fti-contain, .container, .fti-page {
     width: 740px; } }
 @media (min-width: 992px) {
-  .container, .fti-contain {
+  .fti-contain, .container, .fti-page {
     width: 980px; } }
 @media (min-width: 1200px) {
-  .container, .fti-contain {
+  .fti-contain, .container, .fti-page {
     width: 1180px; } }
 
-.container, .fti-contain, .fti__contain {
+.fti-contain, .fti__contain, .container, .fti-page {
   margin-right: auto;
   margin-left: auto;
   padding-left: 10px;
   padding-right: 10px; }
 
-.row, .fti-wrap {
+.fti-wrap, .row, .doublet, .triplet {
   margin-left: -10px;
   margin-right: -10px; }
 
-.fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .fti-col-5, .fti-col-6, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+.fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet-inner, .fti-col-5, .fti-col-6, .doublet-inner, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   position: relative;
   float: left;
   min-height: 1px;
@@ -71,13 +71,13 @@ li {
 .fti-col-3 {
   width: 25%; }
 
-.fti-col-4 {
+.fti-col-4, .triplet-inner {
   width: 33.33333%; }
 
 .fti-col-5 {
   width: 41.66667%; }
 
-.fti-col-6 {
+.fti-col-6, .doublet-inner {
   width: 50%; }
 
 .fti-col-7 {
@@ -134,12 +134,15 @@ li {
 .col-xs-12 {
   width: 100%; }
 
+.mb20 {
+  margin-bottom: 20px; }
+
 body {
   margin: 0;
   padding: 0; }
 
 .box {
   border: 1px dashed #000;
-  height: 100px; }
+  min-height: 100px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,9 +1,29 @@
 @import "grid";
+.mb20 {
+  margin-bottom: 20px;
+}
 body {
   margin: 0;
   padding: 0;
 }
 .box {
   border: 1px dashed #000;
-  height: 100px;
+  min-height: 100px;
+}
+.fti-page {
+  @include fti-contain-static;
+}
+.doublet {
+  @include fti-wrap;
+}
+.doublet-inner {
+  @include fti-col(6);
+}
+
+.triplet {
+  @include fti-wrap;
+}
+
+.triplet-inner {
+  @include fti-col(4);
 }

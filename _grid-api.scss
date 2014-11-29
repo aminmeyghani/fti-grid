@@ -1,51 +1,19 @@
-%_fti-contain-queries {
-  @media (min-width: $fti-sm-min) { width: $page-sm; }
-  @media (min-width: $fti-md-min) { width: $page-md; }
-  @media (min-width: $fti-lg-min) { width: $page-lg; }
-}
 @mixin fti-contain-static {
   @extend %_fti-contain-queries;
 }
 
-%_fti-contain {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left:  ($fti-gutter / 2);
-  padding-right: ($fti-gutter / 2);
-  @extend %fti-border-box;
-}
 @mixin fti-contain($gutter: $fti-gutter) {
   @extend %_fti-contain;
 }
 
-%_fti-wrap-setup {
-  @extend %fti-clearfix;
-  margin-left:  ($fti-gutter / -2);
-  margin-right: ($fti-gutter / -2);
-}
 @mixin fti-wrap($gutter: $fti-gutter) {
   @extend %_fti-wrap-setup;
 }
 
-// tricky (used to get the % values group with selectors)
-%_fti-col {
-  @extend %fti-border-box;
-  position: relative;
-  float: left;
-  min-height: 1px;
-  padding-left:  ($fti-gutter / 2);
-  padding-right: ($fti-gutter / 2);
-}
-@mixin _fti-col ($col) {
-  width: percentage(($col / $fti-col-n));
-}
-@include calc-grid-column(width, $col-prefix);
 @mixin fti-col($col) {
-  $n : "#{$col-prefix}-#{$col}";
-  $name : #{$n};
-  @extend #{$name};
+  @include make-fti-col($col);
 }
-// here
+
 
 @mixin fti-col-offset($col) {
   margin-left: percentage(($col / $fti-col-n));

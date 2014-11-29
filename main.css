@@ -29,7 +29,7 @@ li {
 .fti-wrap:after, .doublet:after, .triplet:after {
   clear: both; }
 
-.fti-contain, .fti__contain, .my-page, .my-new-page {
+.fti-contain, .fti__contain, .my-page, .my-new-page, .fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet-inner, .fti-col-5, .fti-col-6, .doublet-inner, .ddx, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -54,6 +54,13 @@ li {
 .fti-wrap, .doublet, .triplet {
   margin-left: -10px;
   margin-right: -10px; }
+
+.fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet-inner, .fti-col-5, .fti-col-6, .doublet-inner, .ddx, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12 {
+  position: relative;
+  float: left;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px; }
 
 .fti-col-1 {
   width: 8.33333%; }

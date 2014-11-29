@@ -1,44 +1,4 @@
-@mixin calc-grid-column($type, $prefix: $col-prefix) {
-	@if ($type == width) {
-		@for $index from 1 through $fti-col-n {
-			#{$col-prefix}-#{$index} {
-				@include _fti-col($index);
-			}
-		}
-	}
-	@if ($type == push) {
-		@for $index from 1 through $fti-col-n {
-			#{$col-prefix}-push-#{$index} {
-				left: percentage(($index / $fti-col-n));
-			}
-		}
-	}
-	@if ($type == push){
-			#{$col-prefix}-push-0 {
-				left: auto;
-			}
-	}
-	@if ($type == pull) {
-		@for $index from 1 through $fti-col-n {
-			#{$col-prefix}-pull-#{$index} {
-				right: percentage(($index / $fti-col-n));
-			}
-		}
 
-	}
-	@if ($type == pull) {
-			#{$col-prefix}-pull-0 {
-				right: auto;
-			}
-	}
-	@if ($type == offset) {
-		@for $index from 0 through $fti-col-n {
-			#{$col-prefix}-offset-#{$index} {
-				margin-left: percentage(($index / $fti-col-n));
-			}
-		}
-	}
-}
 
 @mixin make-grid($prefix: $col-prefix) {
 	@if($is_generators and $is_push_pull_classes) {

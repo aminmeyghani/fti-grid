@@ -1,0 +1,82 @@
+%_fti-contain-queries {
+  @media (min-width: $fti-sm-min) { width: $page-sm; }
+  @media (min-width: $fti-md-min) { width: $page-md; }
+  @media (min-width: $fti-lg-min) { width: $page-lg; }
+}
+%_fti-contain {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  ($fti-gutter / 2);
+  padding-right: ($fti-gutter / 2);
+  @extend %fti-border-box;
+}
+
+%_fti-wrap-setup {
+  @extend %fti-clearfix;
+  margin-left:  ($fti-gutter / -2);
+  margin-right: ($fti-gutter / -2);
+}
+
+
+%_fti-col {
+  @extend %fti-border-box;
+  position: relative;
+  float: left;
+  min-height: 1px;
+  padding-left:  ($fti-gutter / 2);
+  padding-right: ($fti-gutter / 2);
+}
+
+@mixin _fti-col ($col) {
+	@extend %_fti-col;
+  width: percentage(($col / $fti-col-n));
+}
+
+@mixin calc-grid-column($type, $prefix: $col-prefix) {
+	@if ($type == width) {
+		@for $index from 1 through $fti-col-n {
+			#{$col-prefix}-#{$index} {
+				@include _fti-col($index);
+			}
+		}
+	}
+	@if ($type == push) {
+		@for $index from 1 through $fti-col-n {
+			#{$col-prefix}-push-#{$index} {
+				left: percentage(($index / $fti-col-n));
+			}
+		}
+	}
+	@if ($type == push){
+			#{$col-prefix}-push-0 {
+				left: auto;
+			}
+	}
+	@if ($type == pull) {
+		@for $index from 1 through $fti-col-n {
+			#{$col-prefix}-pull-#{$index} {
+				right: percentage(($index / $fti-col-n));
+			}
+		}
+
+	}
+	@if ($type == pull) {
+			#{$col-prefix}-pull-0 {
+				right: auto;
+			}
+	}
+	@if ($type == offset) {
+		@for $index from 0 through $fti-col-n {
+			#{$col-prefix}-offset-#{$index} {
+				margin-left: percentage(($index / $fti-col-n));
+			}
+		}
+	}
+}
+
+@include calc-grid-column(width, $col-prefix);
+@mixin make-fti-col($col) {
+	$n : "#{$col-prefix}-#{$col}";
+	$name : #{$n};
+	@extend #{$name};
+}

@@ -2,7 +2,11 @@
 
 .my-page {
   @include fti-contain;
-  @include fti-contain-queries;
+  @include fti-contain-static;
+}
+.my-new-page {
+ @include fti-contain;
+ @include fti-contain-static; 
 }
 .doublet {
   @include fti-wrap;

@@ -1,6 +1,5 @@
 @mixin calc-grid-column($type, $prefix: $col-prefix) {
 	@if ($type == width) {
-		// $index : 1;
 		@for $index from 1 through $fti-col-n {
 			#{$col-prefix}-#{$index} {
 				// width: percentage(($index / $fti-col-n));

@@ -1,46 +1,32 @@
-@mixin fti-contain-queries {
-  @media (min-width: $fti-sm-min) {
-    width: $page-sm;
-  }
-  @media (min-width: $fti-md-min) {
-    width: $page-md;
-  }
-  @media (min-width: $fti-lg-min) {
-    width: $page-lg;
-  }
+%_fti-contain-queries {
+  @media (min-width: $fti-sm-min) { width: $page-sm; }
+  @media (min-width: $fti-md-min) { width: $page-md; }
+  @media (min-width: $fti-lg-min) { width: $page-lg; }
+}
+@mixin fti-contain-static {
+  @extend %_fti-contain-queries;
 }
 
-@mixin fti-contain($gutter: $fti-gutter) {
+%_fti-contain {
   margin-right: auto;
   margin-left: auto;
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
+  padding-left:  ($fti-gutter / 2);
+  padding-right: ($fti-gutter / 2);
   @extend %fti-border-box;
 }
-%fti-contain {
-	@include fti-contain;
+@mixin fti-contain($gutter: $fti-gutter) {
+  @extend %_fti-contain;
 }
 
 %_fti-wrap-setup {
+  @extend %fti-clearfix;
   margin-left:  ($fti-gutter / -2);
   margin-right: ($fti-gutter / -2);
 }
-
 @mixin fti-wrap($gutter: $fti-gutter) {
   @extend %_fti-wrap-setup;
-  @extend %fti-clearfix;
 }
 
-
-// @mixin make-fti-col($columns, $gutter: $fti-gutter) {
-//   @extend %fti-border-box;
-//   position: relative;
-//   float: left;
-//   width: percentage(($columns / $fti-col-n));
-//   min-height: 1px;
-//   padding-left:  ($gutter / 2);
-//   padding-right: ($gutter / 2);
-// }
 %_fti-col {
   @extend %fti-border-box;
   position: relative;

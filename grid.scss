@@ -10,14 +10,12 @@
 @if ($is_generators) {
   // @include make-grid();
   .fti-contain {
-    @extend %fti-contain;
-    @extend %fti-clearfix;
-    @include fti-contain-queries;
+    @include fti-contain;
+    @include fti-contain-static;
   }
 
   .fti__contain {
-    @extend %fti-contain;
-    @extend %fti-clearfix;
+    @include fti-contain;
   }
   .fti-wrap {
     @include fti-wrap;

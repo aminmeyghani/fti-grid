@@ -3,7 +3,7 @@
 @if($is_debugging) {
 	.container {
 		@extend %fti-contain;
-	  @include fti-contain-queries;
+	  @include fti-contain-static;
 	}
 
 }

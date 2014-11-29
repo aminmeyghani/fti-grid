@@ -1,5 +1,4 @@
-
-
+// generator function for creating the push pull offset classes.
 @mixin make-grid($prefix: $col-prefix) {
 	@if($is_generators and $is_push_pull_classes) {
 		@include calc-grid-column(pull, $prefix);

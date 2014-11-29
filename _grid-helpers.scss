@@ -17,7 +17,6 @@
   margin-right: ($fti-gutter / -2);
 }
 
-
 %_fti-col {
   @extend %fti-border-box;
   position: relative;
@@ -26,16 +25,14 @@
   padding-left:  ($fti-gutter / 2);
   padding-right: ($fti-gutter / 2);
 }
-
 @mixin _fti-col ($col) {
 	@extend %_fti-col;
   width: percentage(($col / $fti-col-n));
 }
-
 @mixin calc-grid-column($type, $prefix: $col-prefix) {
 	@if ($type == width) {
 		@for $index from 1 through $fti-col-n {
-			#{$col-prefix}-#{$index} {
+			#{$prefix}-#{$index} {
 				@include _fti-col($index);
 			}
 		}
@@ -73,7 +70,6 @@
 		}
 	}
 }
-
 @include calc-grid-column(width, $col-prefix);
 @mixin make-fti-col($col) {
 	$n : "#{$col-prefix}-#{$col}";

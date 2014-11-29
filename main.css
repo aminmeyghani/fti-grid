@@ -23,39 +23,39 @@ li {
 /* ## `fti-clearfix`
 * Source: http://nicolasgallagher.com/micro-clearfix-hack/
 */
-.fti-wrap:before, .doublet:before, .triplet:before, .fti-wrap:after, .doublet:after, .triplet:after {
+.row:before, .fti-wrap:before, .doublet:before, .triplet:before, .row:after, .fti-wrap:after, .doublet:after, .triplet:after {
   content: " ";
   display: table; }
-.fti-wrap:after, .doublet:after, .triplet:after {
+.row:after, .fti-wrap:after, .doublet:after, .triplet:after {
   clear: both; }
 
-.fti-contain, .fti__contain, .my-page, .my-new-page, .fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet-inner, .fti-col-5, .fti-col-6, .doublet-inner, .ddx, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12 {
+.container, .fti-contain, .fti__contain, .my-page, .my-new-page, .fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet-inner, .fti-col-5, .fti-col-6, .doublet-inner, .ddx, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   *behavior: url("boxsizing.htc"); }
 
 @media (min-width: 768px) {
-  .fti-contain, .my-page, .my-new-page {
+  .container, .fti-contain, .my-page, .my-new-page {
     width: 760px; } }
 @media (min-width: 992px) {
-  .fti-contain, .my-page, .my-new-page {
+  .container, .fti-contain, .my-page, .my-new-page {
     width: 1000px; } }
 @media (min-width: 1200px) {
-  .fti-contain, .my-page, .my-new-page {
+  .container, .fti-contain, .my-page, .my-new-page {
     width: 1180px; } }
 
-.fti-contain, .fti__contain, .my-page, .my-new-page {
+.container, .fti-contain, .fti__contain, .my-page, .my-new-page {
   margin-right: auto;
   margin-left: auto;
   padding-left: 10px;
   padding-right: 10px; }
 
-.fti-wrap, .doublet, .triplet {
+.row, .fti-wrap, .doublet, .triplet {
   margin-left: -10px;
   margin-right: -10px; }
 
-.fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet-inner, .fti-col-5, .fti-col-6, .doublet-inner, .ddx, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12 {
+.fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet-inner, .fti-col-5, .fti-col-6, .doublet-inner, .ddx, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   position: relative;
   float: left;
   min-height: 1px;
@@ -96,6 +96,42 @@ li {
   width: 91.66667%; }
 
 .fti-col-12 {
+  width: 100%; }
+
+.col-xs-1 {
+  width: 8.33333%; }
+
+.col-xs-2 {
+  width: 16.66667%; }
+
+.col-xs-3 {
+  width: 25%; }
+
+.col-xs-4 {
+  width: 33.33333%; }
+
+.col-xs-5 {
+  width: 41.66667%; }
+
+.col-xs-6 {
+  width: 50%; }
+
+.col-xs-7 {
+  width: 58.33333%; }
+
+.col-xs-8 {
+  width: 66.66667%; }
+
+.col-xs-9 {
+  width: 75%; }
+
+.col-xs-10 {
+  width: 83.33333%; }
+
+.col-xs-11 {
+  width: 91.66667%; }
+
+.col-xs-12 {
   width: 100%; }
 
 /*# sourceMappingURL=main.css.map */

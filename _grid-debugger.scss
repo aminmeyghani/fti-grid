@@ -1,15 +1,14 @@
 // for debugging used with chrome extension.
-
-@if($is_debugging) {
+@if ($is_debugging) {
+	@include calc-grid-column(width, $prefix:".col-xs");
+	.row {
+	  @include fti-wrap;
+	}
 	.container {
-		@extend %fti-contain;
+		@extend %_fti-contain;
 	  @include fti-contain-static;
 	}
-
 }
 
-@if ($is_debugging) {
-  .row {
-    @include fti-wrap;
-  }
-}
+
+

@@ -1,3 +1,5 @@
+// containers
+// ----------
 @mixin fti-contain-static {
   @extend %_fti-contain-queries;
 }
@@ -15,6 +17,8 @@
 }
 
 
+// push pull offset
+// -----------------
 @mixin fti-col-offset($col) {
   margin-left: percentage(($col / $fti-col-n));
 }

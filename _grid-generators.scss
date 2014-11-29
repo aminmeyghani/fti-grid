@@ -2,43 +2,37 @@
 	@if ($type == width) {
 		@for $index from 1 through $fti-col-n {
 			#{$col-prefix}-#{$index} {
-				// width: percentage(($index / $fti-col-n));
 				@include fti-col($index);
 			}
 		}
 	}
-	@if ($type == push) and ($index > 0) {
-		@for $i from 0 through $columns {
+	@if ($type == push) {
+		@for $index from 1 through $fti-col-n {
 			#{$col-prefix}-push-#{$index} {
 				left: percentage(($index / $fti-col-n));
 			}
 		}
 	}
-	@if ($type == push) and ($index == 0) {
-		@for $i from 0 through $columns {
+	@if ($type == push){
 			#{$col-prefix}-push-0 {
 				left: auto;
 			}
-		}
 	}
-	@if ($type == pull) and ($index > 0) {
-		@for $i from 0 through $columns {
+	@if ($type == pull) {
+		@for $index from 1 through $fti-col-n {
 			#{$col-prefix}-pull-#{$index} {
 				right: percentage(($index / $fti-col-n));
 			}
 		}
 
 	}
-	@if ($type == pull) and ($index == 0) {
-		@for $i from 0 through $columns {
+	@if ($type == pull) {
 			#{$col-prefix}-pull-0 {
 				right: auto;
 			}
-		}
-
 	}
 	@if ($type == offset) {
-		@for $i from 0 through $columns {
+		@for $index from 0 through $fti-col-n {
 			#{$col-prefix}-offset-#{$index} {
 				margin-left: percentage(($index / $fti-col-n));
 			}
@@ -46,25 +40,7 @@
 	}
 }
 
-// @mixin make-common-col-properties() {
-// 	@if ($is_generators and $is_col_classes) {
-// 		$i: 1;
-// 		$list: "#{$col-prefix}-#{$i}";
-// 		@for $i from $i+1 through $fti-col-n {
-// 			$list: "#{$list}, #{$col-prefix}-#{$i}";
-// 		}
-// 		#{$list} {
-// 				@extend %fti-col;
-// 			  @extend %fti-border-box;
-// 			}
-// 		}
-// 	}
-
 @mixin make-grid($prefix: $col-prefix) {
-	@if($is_generators and $is_col_classes) {
-		// @include make-common-col-properties;
-		@include calc-grid-column(width, $prefix);
-	}
 	@if($is_generators and $is_push_pull_classes) {
 		@include calc-grid-column(pull, $prefix);
 		@include calc-grid-column(push, $prefix);

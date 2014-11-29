@@ -8,7 +8,7 @@
 
 
 @if ($is_generators) {
-  // @include make-grid();
+  @include make-grid();
   .fti-contain {
     @include fti-contain;
     @include fti-contain-static;

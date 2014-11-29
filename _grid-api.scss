@@ -35,13 +35,11 @@
   padding-left:  ($fti-gutter / 2);
   padding-right: ($fti-gutter / 2);
 }
-
 @mixin fti-col ($col) {
 	@extend %_fti-col;
   width: percentage(($col / $fti-col-n));
 }
-@include make-grid();
-// here
+@include calc-grid-column(width, $col-prefix);
 @mixin fti-col($v) {
   $n : "#{$col-prefix}-#{$v}";
   $name : #{$n};

@@ -50,6 +50,7 @@
 @mixin _fti-col ($col) {
 	@extend %_fti-col;
   width: percentage(($col / $fti-col-n));
+
 }
 @mixin calc-grid-column($type, $prefix: $col-prefix) {
 	@if ($type == width) {
@@ -97,4 +98,5 @@
 	$n : "#{$col-prefix}-#{$col}";
 	$name : #{$n};
 	@extend #{$name};
+
 }

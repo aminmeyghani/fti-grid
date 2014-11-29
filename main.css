@@ -23,39 +23,39 @@ li {
 /* ## `fti-clearfix`
 * Source: http://nicolasgallagher.com/micro-clearfix-hack/
 */
-.fti-wrap:before, .row:before, .doublet:before, .triplet:before, .fti-wrap:after, .row:after, .doublet:after, .triplet:after {
+.fti-wrap:before, .row:before, .cards:before, .fti-wrap:after, .row:after, .cards:after {
   content: " ";
   display: table; }
-.fti-wrap:after, .row:after, .doublet:after, .triplet:after {
+.fti-wrap:after, .row:after, .cards:after {
   clear: both; }
 
-.fti-contain, .fti__contain, .container, .fti-page, .fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet-inner, .fti-col-5, .fti-col-6, .doublet-inner, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+.fti-contain, .fti__contain, .container, .fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .card-item, .fti-col-5, .fti-col-6, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   *behavior: url("boxsizing.htc"); }
 
 @media (min-width: 768px) {
-  .fti-contain, .container, .fti-page {
+  .fti-contain, .container {
     width: 740px; } }
 @media (min-width: 992px) {
-  .fti-contain, .container, .fti-page {
+  .fti-contain, .container {
     width: 980px; } }
 @media (min-width: 1200px) {
-  .fti-contain, .container, .fti-page {
+  .fti-contain, .container {
     width: 1180px; } }
 
-.fti-contain, .fti__contain, .container, .fti-page {
+.fti-contain, .fti__contain, .container {
   margin-right: auto;
   margin-left: auto;
   padding-left: 10px;
   padding-right: 10px; }
 
-.fti-wrap, .row, .doublet, .triplet {
+.fti-wrap, .row, .cards {
   margin-left: -10px;
   margin-right: -10px; }
 
-.fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet-inner, .fti-col-5, .fti-col-6, .doublet-inner, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+.fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .card-item, .fti-col-5, .fti-col-6, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   position: relative;
   float: left;
   min-height: 1px;
@@ -71,13 +71,13 @@ li {
 .fti-col-3 {
   width: 25%; }
 
-.fti-col-4, .triplet-inner {
+.fti-col-4, .card-item {
   width: 33.33333%; }
 
 .fti-col-5 {
   width: 41.66667%; }
 
-.fti-col-6, .doublet-inner {
+.fti-col-6 {
   width: 50%; }
 
 .fti-col-7 {
@@ -144,5 +144,9 @@ body {
 .box {
   border: 1px dashed #000;
   min-height: 100px; }
+
+@media (max-width: 768px) {
+  .card-item {
+    width: 100%; } }
 
 /*# sourceMappingURL=main.css.map */

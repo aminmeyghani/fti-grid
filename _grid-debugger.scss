@@ -5,7 +5,6 @@
 	  @include fti-wrap;
 	}
 	.container {
-		@extend %_fti-contain;
 	  @include fti-contain-static;
 	}
 }

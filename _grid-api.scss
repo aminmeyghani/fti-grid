@@ -1,6 +1,7 @@
 // containers
 // ----------
 @mixin fti-contain-static {
+  @extend %_fti-contain;
   @extend %_fti-contain-queries;
 }
 

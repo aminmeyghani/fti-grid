@@ -11,10 +11,8 @@
 @if ($is_generators) {
   @include make-grid();
   .fti-contain {
-    @include fti-contain;
     @include fti-contain-static;
   }
-
   .fti__contain {
     @include fti-contain;
   }

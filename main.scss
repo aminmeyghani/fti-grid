@@ -1,29 +1,9 @@
 @import "grid";
-
-.my-page {
-  @include fti-contain;
-  @include fti-contain-static;
+body {
+  margin: 0;
+  padding: 0;
 }
-.my-new-page {
- @include fti-contain;
- @include fti-contain-static; 
+.box {
+  border: 1px dashed #000;
+  height: 100px;
 }
-.doublet {
-  @include fti-wrap;
-}
-.doublet-inner {
-  @include fti-col(6);
-}
-
-.triplet {
-  @include fti-wrap;
-}
-
-.triplet-inner {
-  @include fti-col(4);
-}
-
-.ddx {
-  @include fti-col(6);
-}
-

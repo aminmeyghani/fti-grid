@@ -6,14 +6,16 @@
 }
 .doublet {
   @include fti-wrap;
-  li {
-    @include fti-col(6);
-  }
+}
+.doublet-inner {
+  @include fti-col(6);
 }
 
 .triplet {
   @include fti-wrap;
-  li {
-    @include fti-col(4);
-  }
 }
+
+.triplet-inner {
+  @include fti-col(4);
+}
+

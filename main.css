@@ -29,7 +29,7 @@ li {
 .fti-contain:after, .fti__contain:after, .fti-wrap:after, .doublet:after, .triplet:after {
   clear: both; }
 
-.fti-contain, .fti__contain, .fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet li, .fti-col-5, .fti-col-6, .doublet li, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .my-page {
+.fti-contain, .fti__contain, .fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet-inner, .fti-col-5, .fti-col-6, .doublet-inner, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .my-page {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -45,7 +45,7 @@ li {
   margin-left: -10px;
   margin-right: -10px; }
 
-.fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet li, .fti-col-5, .fti-col-6, .doublet li, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12 {
+.fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet-inner, .fti-col-5, .fti-col-6, .doublet-inner, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12 {
   position: relative;
   float: left;
   min-height: 1px;
@@ -61,13 +61,13 @@ li {
 .fti-col-3 {
   width: 25%; }
 
-.fti-col-4, .triplet li {
+.fti-col-4, .triplet-inner {
   width: 33.33333%; }
 
 .fti-col-5 {
   width: 41.66667%; }
 
-.fti-col-6, .doublet li {
+.fti-col-6, .doublet-inner {
   width: 50%; }
 
 .fti-col-7 {

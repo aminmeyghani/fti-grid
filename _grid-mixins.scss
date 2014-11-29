@@ -21,7 +21,7 @@
 	  -webkit-box-sizing: $boxmodel;
 	     -moz-box-sizing: $boxmodel;
 	          box-sizing: $boxmodel;
-	          *behavior: url("boxsizing.htc");
+	          // *behavior: url("boxsizing.htc");
 	}
 	%fti-border-box {
 		@include box-sizing(border-box);

@@ -1,17 +1,4 @@
-ul {
-  list-style-type: none;
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-start: 0;
-  -webkit-margin-end: 0;
-  -webkit-padding-start: 0;
-  padding: 0;
-  margin: 0; }
-
-li {
-  display: block;
-  list-style-type: none; }
-
+@charset "UTF-8";
 /* Smartphones (portrait and landscape) ----------- */
 /* Smartphones (landscape) ----------- */
 /* Smartphones (portrait) ----------- */
@@ -32,8 +19,21 @@ li {
 .fti-contain, .fti__contain, .container, .fti-page, .fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet-inner, .fti-col-5, .fti-col-6, .doublet-inner, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  *behavior: url("boxsizing.htc"); }
+  box-sizing: border-box; }
+
+ul {
+  list-style-type: none;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
+  padding: 0;
+  margin: 0; }
+
+li {
+  display: block;
+  list-style-type: none; }
 
 @media (min-width: 768px) {
   .fti-contain, .container, .fti-page {
@@ -143,6 +143,123 @@ body {
 
 .box {
   border: 1px dashed #000;
-  min-height: 100px; }
+  min-height: 100px;
+  padding: 10px;
+  *width: expression((this.parentNode.clientWidth - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.fti-wrap {
+  min-width: 100%;
+  *width: expression((this.parentNode.clientWidth - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+/* $ Fluid grid system (12 columns) 
+============================================================================ */
+/* Sub-Pixel Problems in CSS
+ * http://ejohn.org/blog/sub-pixel-problems-in-css/
+ * 
+ *
+ * Unfortunately, there’s no silver bullet.
+ * Read on.
+ *
+ * FF4+: ok
+ *
+ * WebKit is ok since 3 May, 2013 
+ * http://css-tricks.com/percentage-bugs-in-webkit/
+ * http://trac.webkit.org/changeset/116009
+ *
+ * IE8+: ok
+ *
+ * IE7: no %, use fixed grid
+ * "The only way to prevent layouts from breaking in IE6/7 is to fractionally 
+ * reduce the percentages so that they add up to just under 100%."
+ * - http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
+ *
+ * Opera and Safari round the numbers down. 
+ * No fix :(
+ * A discussion about Opera on GitHub https://github.com/jokjus/centage/issues/1
+ * A discussion about Bootstrap fluid grid system on StackOverflow
+ * http://stackoverflow.com/questions/10683539/bootstrap-fluid-grid-system-issue-opera-11-64
+ *
+ *
+ */
+/*
+ * 
+ * <body> is the grid container
+ *
+    body {
+      max-width: 940px;
+      *min-width: 940px;
+    } 
+ *
+ */
+.col-1-5 {
+  width: 20%;
+  *width: expression((this.parentNode.clientWidth/5 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.col-3-5 {
+  width: 60%;
+  *width: expression((this.parentNode.clientWidth/5*3 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.col-4-5 {
+  width: 80%;
+  *width: expression((this.parentNode.clientWidth/5*4 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.col-3-8 {
+  width: 37.5%;
+  *width: expression((this.parentNode.clientWidth/8*3 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.col-5-8 {
+  width: 62.5%;
+  *width: expression((this.parentNode.clientWidth/8*5 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.col-7-8 {
+  width: 87.5%;
+  *width: expression((this.parentNode.clientWidth/8*7 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.col-5-12 {
+  width: 41.6666%;
+  *width: expression((this.parentNode.clientWidth/12*5 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.fti-col-12 {
+  *width: expression((this.parentNode.clientWidth - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.fti-col-11 {
+  *width: expression((this.parentNode.clientWidth/12*11 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.fti-col-10 {
+  *width: expression((this.parentNode.clientWidth/6*5 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.fti-col-9 {
+  *width: expression((this.parentNode.clientWidth/4*3 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.fti-col-8 {
+  *width: expression((this.parentNode.clientWidth/3*2 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.fti-col-7 {
+  *width: expression((this.parentNode.clientWidth/12*7 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.fti-col-6, .doublet-inner {
+  *width: expression((this.parentNode.clientWidth/2 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.fti-col-5 {
+  width: 40%;
+  *width: expression((this.parentNode.clientWidth/5*2 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.fti-col-4, .triplet-inner {
+  *width: expression((this.parentNode.clientWidth/3 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.fti-col-3 {
+  width: 25%;
+  *width: expression((this.parentNode.clientWidth/4 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.fti-col-2 {
+  *width: expression((this.parentNode.clientWidth/6 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.fti-col-1 {
+  *width: expression((this.parentNode.clientWidth/12 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px');
+  *width: expression((this.parentNode.clientWidth/12 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
+
+.col-1-8 {
+  width: 12.5%;
+  *width: expression((this.parentNode.clientWidth/8 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px'); }
 
 /*# sourceMappingURL=main.css.map */

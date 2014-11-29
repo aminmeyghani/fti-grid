@@ -23,28 +23,80 @@ li {
 /* ## `fti-clearfix`
 * Source: http://nicolasgallagher.com/micro-clearfix-hack/
 */
-.doublet:before, .triplet:before, .doublet:after, .triplet:after {
+.fti-contain:before, .fti__contain:before, .fti-wrap:before, .doublet:before, .triplet:before, .fti-contain:after, .fti__contain:after, .fti-wrap:after, .doublet:after, .triplet:after {
   content: " ";
   display: table; }
-.doublet:after, .triplet:after {
+.fti-contain:after, .fti__contain:after, .fti-wrap:after, .doublet:after, .triplet:after {
   clear: both; }
 
-.doublet li, .triplet li, .my-page {
+.fti-contain, .fti__contain, .fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet li, .fti-col-5, .fti-col-6, .doublet li, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12, .my-page {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   *behavior: url("boxsizing.htc"); }
 
-.doublet, .triplet {
+.fti-contain, .fti__contain {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.fti-wrap, .doublet, .triplet {
   margin-left: -10px;
   margin-right: -10px; }
 
-.doublet li, .triplet li {
+.fti-col-1, .fti-col-2, .fti-col-3, .fti-col-4, .triplet li, .fti-col-5, .fti-col-6, .doublet li, .fti-col-7, .fti-col-8, .fti-col-9, .fti-col-10, .fti-col-11, .fti-col-12 {
   position: relative;
   float: left;
   min-height: 1px;
   padding-left: 10px;
   padding-right: 10px; }
+
+.fti-col-1 {
+  width: 8.33333%; }
+
+.fti-col-2 {
+  width: 16.66667%; }
+
+.fti-col-3 {
+  width: 25%; }
+
+.fti-col-4, .triplet li {
+  width: 33.33333%; }
+
+.fti-col-5 {
+  width: 41.66667%; }
+
+.fti-col-6, .doublet li {
+  width: 50%; }
+
+.fti-col-7 {
+  width: 58.33333%; }
+
+.fti-col-8 {
+  width: 66.66667%; }
+
+.fti-col-9 {
+  width: 75%; }
+
+.fti-col-10 {
+  width: 83.33333%; }
+
+.fti-col-11 {
+  width: 91.66667%; }
+
+.fti-col-12 {
+  width: 100%; }
+
+@media (min-width: 768px) {
+  .fti-contain {
+    width: 760px; } }
+@media (min-width: 992px) {
+  .fti-contain {
+    width: 1000px; } }
+@media (min-width: 1200px) {
+  .fti-contain {
+    width: 1180px; } }
 
 .my-page {
   margin-right: auto;
@@ -60,11 +112,5 @@ li {
   @media (min-width: 1200px) {
     .my-page {
       width: 1180px; } }
-
-.doublet li {
-  width: 50%; }
-
-.triplet li {
-  width: 33.33333%; }
 
 /*# sourceMappingURL=main.css.map */

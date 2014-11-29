@@ -32,16 +32,16 @@
 }
 
 
-@mixin make-fti-col($columns, $gutter: $fti-gutter) {
-  @extend %fti-border-box;
-  position: relative;
-  float: left;
-  width: percentage(($columns / $fti-col-n));
-  min-height: 1px;
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
-}
-%fti-col {
+// @mixin make-fti-col($columns, $gutter: $fti-gutter) {
+//   @extend %fti-border-box;
+//   position: relative;
+//   float: left;
+//   width: percentage(($columns / $fti-col-n));
+//   min-height: 1px;
+//   padding-left:  ($gutter / 2);
+//   padding-right: ($gutter / 2);
+// }
+%_fti-col {
   @extend %fti-border-box;
   position: relative;
   float: left;
@@ -50,18 +50,25 @@
   padding-right: ($fti-gutter / 2);
 }
 
-@mixin fti-col ($columns) {
-	@extend %fti-col;
-  width: percentage(($columns / $fti-col-n));
+@mixin fti-col ($col) {
+	@extend %_fti-col;
+  width: percentage(($col / $fti-col-n));
 }
+@include make-grid();
+// here
+@mixin fti-col($v) {
+  $n : "#{$col-prefix}-#{$v}";
+  $name : #{$n};
+  @extend #{$name};
+}
+// here
 
-
-@mixin fti-col-offset($columns) {
-  margin-left: percentage(($columns / $fti-col-n));
+@mixin fti-col-offset($col) {
+  margin-left: percentage(($col / $fti-col-n));
 }
-@mixin fti-col-push($columns) {
-  left: percentage(($columns / $fti-col-n));
+@mixin fti-col-push($col) {
+  left: percentage(($col / $fti-col-n));
 }
-@mixin fti-col-pull($columns) {
-  right: percentage(($columns / $fti-col-n));
+@mixin fti-col-pull($col) {
+  right: percentage(($col / $fti-col-n));
 }

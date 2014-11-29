@@ -8,13 +8,15 @@ $fti-xs-max:              ($fti-sm-min - 1) !default;
 $fti-sm-max:              ($fti-md-min - 1) !default;
 $fti-md-max:              ($fti-lg-min - 1) !default;
 
-$is_generators: false;
+$is_generators: true;
+
+// turn on and off creating classes for columns
+$is_col_classes: true;
 
 // Turn on and off creating classes for pull, push, offset
 $is_push_pull_classes : false;
 
-// turn on and off creating classes for columns
-$is_col_classes: true;
+
 
 // debugger: if set to true, creates classes that the chrome extension understands to create an overlay.
 $is_debugging: false;

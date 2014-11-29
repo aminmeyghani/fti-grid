@@ -1,4 +1,26 @@
 %_fti-contain-queries {
+	//--Max width container widths
+	$fti-xs:                  480px !default;
+	$fti-sm-min:              768px !default;
+	$fti-md-min:              992px !default;
+	$fti-lg-min:              1200px !default;
+
+	$fti-page-large:          1160px !default; // x + y < z | x: width, y: gutter, z: breakpoint. eg: 1140 + 40 = 1180 < 1200
+	$fti-page-medium:         960px !default; // x + y < z | x: width, y: gutter, z: breakpoint. eg: 860 + 40 = 900 < 992
+	$fti-page-small:          720px !default;  // x + y < z | x: width, y: gutter, z: breakpoint
+	//---------
+	$fti-page-large-wrap : $fti-page-large + $fti-gutter;
+	$fti-page-medium-wrap: $fti-page-medium + $fti-gutter;
+	$fti-page-small-wrap: $fti-page-small + $fti-gutter;
+
+	$page-sm:                 $fti-page-small-wrap;
+	$page-md:                 $fti-page-medium-wrap;
+	$page-lg:                 $fti-page-large-wrap;
+
+	$fti-xs-max:              ($fti-sm-min - 1) !default;
+	$fti-sm-max:              ($fti-md-min - 1) !default;
+	$fti-md-max:              ($fti-lg-min - 1) !default;
+
   @media (min-width: $fti-sm-min) { width: $page-sm; }
   @media (min-width: $fti-md-min) { width: $page-md; }
   @media (min-width: $fti-lg-min) { width: $page-lg; }

@@ -1,5 +1,7 @@
 // containers
 // ----------
+// max width for the contain.
+// -----------
 @mixin fti-contain-static {
   @extend %_fti-contain;
   @extend %_fti-contain-queries;

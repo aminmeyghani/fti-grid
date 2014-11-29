@@ -1,37 +1,13 @@
-// Values for reference..
-$fti-xs:                  480px !default;
-$fti-sm-min:              768px !default;
-$fti-md-min:              992px !default;
-$fti-lg-min:              1200px !default;
+// grid
+$fti-col-n:              12 !default;
+$fti-gutter:             20px !default;
+$col-prefix : ".fti-col";
 
-$fti-xs-max:              ($fti-sm-min - 1) !default;
-$fti-sm-max:              ($fti-md-min - 1) !default;
-$fti-md-max:              ($fti-lg-min - 1) !default;
-
-$is_generators: false;
+// global settings
+$is_generators: true;
 
 // Turn on and off creating classes for pull, push, offset
 $is_push_pull_classes : false;
 
 // debugger: if set to true, creates classes that the chrome extension understands to create an overlay.
-$is_debugging: false;
-
-// grid & container
-$fti-col-n:              12 !default;
-$fti-gutter:             20px !default;
-$col-prefix : ".fti-col";
-
-// max width for the contain.
-// -----------
-$fti-page-large: 1140px;
-$fti-page-large-wrap : $fti-page-large + $fti-gutter*2;
-
-$fti-page-medium: 960px;
-$fti-page-medium-wrap: $fti-page-medium + $fti-gutter*2;
-
-$fti-page-small: 720px;
-$fti-page-small-wrap: $fti-page-small + $fti-gutter*2;
-
-$page-sm:                 $fti-page-small-wrap;
-$page-md:                 $fti-page-medium-wrap;
-$page-lg:                 $fti-page-large-wrap;
+$is_debugging: true;

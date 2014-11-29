@@ -1,0 +1,105 @@
+// ## Pixel Ratio Media Queries
+
+  // examples: iPhone 4, iphone 4s, iphone 5s,iphone5 ipad mini
+  // examples: Google Nexus 4,  Google Nexus
+  // examples: Amazon Kindle Fire HDX 7, Motorola Droid Razr, HTC One M8, HTC One X
+  @mixin media-1-5r {
+    @media
+    only screen and (-webkit-min-device-pixel-ratio : 1.5),
+    only screen and (min-device-pixel-ratio : 1.5) {
+      @content;
+    }
+  }
+
+  // examples: iphone 6, ipad air, ipad mini2, ipad 4th gen
+  @mixin media-2r{
+    @media
+    only screen and (-webkit-min-device-pixel-ratio : 2),
+    only screen and (min-device-pixel-ratio : 2) {
+      @content;
+    }
+  }
+
+  // examples: iphone 6plus
+  // examples: 
+  @mixin media-3r{
+    @media
+    only screen and (-webkit-min-device-pixel-ratio : 3),
+    only screen and (min-device-pixel-ratio : 3) {
+      @content;
+    }
+  }
+
+
+// ## MEDIA QUERY for reference only
+  // media queries
+  // These are just for reference, don't actually use them.
+  /* Smartphones (portrait and landscape) ----------- */
+  @mixin smarphones {
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px) {
+      @content;
+    }
+  }
+
+  /* Smartphones (landscape) ----------- */
+  @mixin smart-land {
+    @media only screen 
+    and (min-width : 321px) {
+      @content;
+    }
+  }
+
+  /* Smartphones (portrait) ----------- */
+  @mixin smart-port {
+    @media only screen 
+    and (max-width : 320px) {
+      @content;
+    }
+  }
+
+  /* iPads (portrait and landscape) ----------- */
+  @mixin tablet {
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) {
+      @content;
+    }
+  }
+
+  /* iPads (landscape) ----------- */
+  @mixin tablet-scape {
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : landscape) {
+      @content;
+    }
+  }
+
+  /* iPads (portrait) ----------- */
+  @mixin tablet-port {
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : portrait) {
+    /* Styles */
+    }
+  }
+
+  /* Desktops and laptops ----------- */
+  @mixin lg {
+    @media only screen 
+    and (min-width : 1224px) {
+      @content;
+    }
+  }
+
+  /* Large screens ----------- */
+  @mixin xl {
+    @media only screen 
+    and (min-width : 1824px) {
+      @content;
+    }
+  }

@@ -1,0 +1,78 @@
+// ## helper for creating cols, push, pull, offsets
+	@mixin calc-grid-column($index, $type) {
+	  @if ($type == width) and ($index > 0) {
+	    #{$col-prefix}-#{$index} {
+	      width: percentage(($index / $fti-col-n));
+	    }
+	  }
+	  @if ($type == push) and ($index > 0) {
+	    #{$col-prefix}-push-#{$index} {
+	      left: percentage(($index / $fti-col-n));
+	    }
+	  }
+	  @if ($type == push) and ($index == 0) {
+	    #{$col-prefix}-push-0 {
+	      left: auto;
+	    }
+	  }
+	  @if ($type == pull) and ($index > 0) {
+	    #{$col-prefix}-pull-#{$index} {
+	      right: percentage(($index / $fti-col-n));
+	    }
+	  }
+	  @if ($type == pull) and ($index == 0) {
+	    #{$col-prefix}-pull-0 {
+	      right: auto;
+	    }
+	  }
+	  @if ($type == offset) {
+	    #{$col-prefix}-offset-#{$index} {
+	      margin-left: percentage(($index / $fti-col-n));
+	    }
+	  }
+	}
+
+
+// helper for looping
+@mixin loop-grid-columns($columns, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-column($i, $type);
+  }
+}
+
+
+// implemetnations
+
+// ## `common column classes`
+// if is_col_classes enabled, will generate common styles for all the columns in the css. i.e. col-1, col-2, ...
+	@mixin make-common-col-properties() {
+		@if ($is_generators and $is_col_classes) {
+			$i: 1;
+			$list: "#{$col-prefix}-#{$i}";
+			@for $i from $i+1 through $fti-col-n {
+			  $list: "#{$list}, #{$col-prefix}-#{$i}";
+			}
+			#{$list} {
+			  position: relative;
+			  min-height: 1px; // Prevent columns from collapsing when empty
+			  padding-left:  ($fti-gutter / 2);
+			  padding-right: ($fti-gutter / 2);
+			  float: left;
+			  // @include box-sizing(border-box);
+			  @extend %fti-border-box;
+			}
+		}
+	}
+
+// does the actual work for creating all the stuff.
+@mixin make-grid() {
+  @if($is_generators and $is_col_classes) {
+  	@include make-common-col-properties;
+    @include loop-grid-columns($fti-col-n, width);
+  }
+  @if($is_generators and $is_push_pull_classes) {
+    @include loop-grid-columns($fti-col-n, pull);
+    @include loop-grid-columns($fti-col-n, push);
+    @include loop-grid-columns($fti-col-n, offset);
+  }
+}

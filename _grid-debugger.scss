@@ -1,0 +1,15 @@
+// for debugging used with chrome extension.
+
+@if($is_debugging) {
+	.container {
+		@extend %fti-contain;
+	  @include fti-contain-queries;
+	}
+
+}
+
+@if ($is_debugging) {
+  .row {
+    @include fti-wrap;
+  }
+}

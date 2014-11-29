@@ -1,0 +1,25 @@
+@import "grid-resets";
+@import "grid-variables";
+@import "grid-queries";
+@import "grid-mixins";
+@import "grid-generators";
+@import "grid-api";
+@import "grid-debugger";
+
+
+@if ($is_generators) {
+  @include make-grid();
+  .fti-contain {
+    @extend %fti-contain;
+    @extend %fti-clearfix;
+    @include fti-contain-queries;
+  }
+
+  .fti__contain {
+    @extend %fti-contain;
+    @extend %fti-clearfix;
+  }
+  .fti-wrap {
+    @include fti-wrap;
+  }
+}

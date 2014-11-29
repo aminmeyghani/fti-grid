@@ -1,0 +1,67 @@
+@mixin fti-contain-queries {
+  @media (min-width: $fti-sm-min) {
+    width: $page-sm;
+  }
+  @media (min-width: $fti-md-min) {
+    width: $page-md;
+  }
+  @media (min-width: $fti-lg-min) {
+    width: $page-lg;
+  }
+}
+
+@mixin fti-contain($gutter: $fti-gutter) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+  @extend %fti-border-box;
+}
+%fti-contain {
+	@include fti-contain;
+}
+
+%_fti-wrap-setup {
+  margin-left:  ($fti-gutter / -2);
+  margin-right: ($fti-gutter / -2);
+}
+
+@mixin fti-wrap($gutter: $fti-gutter) {
+  @extend %_fti-wrap-setup;
+  @extend %fti-clearfix;
+}
+
+
+@mixin make-fti-col($columns, $gutter: $fti-gutter) {
+  @extend %fti-border-box;
+  position: relative;
+  float: left;
+  width: percentage(($columns / $fti-col-n));
+  min-height: 1px;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+%fti-col {
+  @extend %fti-border-box;
+  position: relative;
+  float: left;
+  min-height: 1px;
+  padding-left:  ($fti-gutter / 2);
+  padding-right: ($fti-gutter / 2);
+}
+
+@mixin fti-col ($columns) {
+	@extend %fti-col;
+  width: percentage(($columns / $fti-col-n));
+}
+
+
+@mixin fti-col-offset($columns) {
+  margin-left: percentage(($columns / $fti-col-n));
+}
+@mixin fti-col-push($columns) {
+  left: percentage(($columns / $fti-col-n));
+}
+@mixin fti-col-pull($columns) {
+  right: percentage(($columns / $fti-col-n));
+}

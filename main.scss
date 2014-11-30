@@ -1,4 +1,9 @@
 @import "grid";
+@mixin sm-down {
+	@media(max-width: 768px) {
+	  @content;
+	}
+}
 .mb20 {
   margin-bottom: 20px;
 }
@@ -11,8 +16,9 @@ body {
   min-height: 100px;
 }
 .cards { @include fti-wrap }
-.card-item { @include fti-col(4); 
-    @media(max-width: 768px) {
-      width: 100%;
-    }
- }
+.card-item {
+	@include fti-col(4);
+	@include sm-down {
+		width: 100%;
+	}
+}
